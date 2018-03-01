@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    .shadow {position:fixed; width:100%; height:100%; background:#000; opacity:0.3; filter:alpha(opacity:30);left:0; top: 0;}
+    .mod_dialog {width:300px; height:200px; border:1px solid black; background:#fff; position:fixed; left:50%; top:50%; margin-left:-150px; margin-top:-100px}
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div class="page">
+      <% include components/top.inc.ejs %>
+      <div class="content-wrap">
+        <div>
+          <form action="?" method="post" enctype="multipart/form-data">
+            图片的src：<input type="file" name="src" /><br>
+            标题：<input type="text" name="title" /><br>
+            课程描述：<input type="text" name="summary" /><br>
+            标签1：<input type="text" name="tag1" /><br>
+            标签2：<input type="text" name="tag2" /><br>
+            人数：<input type="text" name="number" /><br>
+            链接：<input type="text" name="href" /><br>
+            <input type="submit" value="添加"/>
+          </form>
+        </div>
+        <table border="1" width="100%">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>图片的src</th>
+              <th>标题</th>
+              <th>课程描述</th>
+              <th>标签1</th>
+              <th>标签2</th>
+              <th>人数</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0;i<home.length;i++){ %>
+            <tr>
+              <td><%=home[i].ID%></td>
+              <td><img width="32" height="32" src="/upload/<%=home[i].src%>"/></td>
+              <td><%=home[i].title%></td>
+              <td><%=home[i].summary%></td>
+              <td><%=home[i].tag1%></td>
+              <td><%=home[i].tag2%></td>
+              <td><%=home[i].number%></td>
+              <td><%=home[i].href%></td>
+              <td>
+                <a href="?act=mod&id=<%=home[i].ID%>">修改</a>
+                <a href="?act=del&id=<%=home[i].ID%>" onclick="return confirm('你真的要删吗？')">删除</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <% if(typeof mod_data!='undefined'){ %>
+        <div class="shadow"></div>
+        <div class="mod_dialog">
+          <form action="?" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="mod_id" value="<%= mod_data.ID %>" /><!--用来判断以后是修改还是刷新-->
+            图片的src：<input type="file" name="src"/><br>
+            标题：<input type="text" name="title" value="<%= mod_data.alt %>"/><br>
+            课程描述：<input type="text" name="summary" value="<%= mod_data.summary %>"/><br>
+            标签1：<input type="text" name="tag1" value="<%= mod_data.tag1 %>"/><br>
+            标签2：<input type="text" name="tag2" value="<%= mod_data.tag2 %>"/><br>
+            人数：<input type="text" name="number" value="<%= mod_data.number %>"/><br>
+            链接：<input type="text" name="href" value="<%= mod_data.href %>"/><br>
+            <input type="submit" value="修改"/>
+            <a href="/admin/">取消修改</a>
+          </form>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

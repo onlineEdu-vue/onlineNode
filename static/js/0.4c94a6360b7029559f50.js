@@ -1,0 +1,2 @@
+webpackJsonp([0],{CWFy:function(e,t){},wy8A:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s={components:{Person:n("BHQi").a}},r={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"mycourses"},[n("Person"),e._v(" "),n("p",{staticClass:"empty"},[e._v("暂无内容")])],1)},staticRenderFns:[]};var c=n("VU/8")(s,r,!1,function(e){n("CWFy")},null,null);t.default=c.exports}});
+//# sourceMappingURL=0.4c94a6360b7029559f50.js.map

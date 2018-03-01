@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="page">
+      <% include components/top.inc.ejs %>
+      <div class="content-wrap">
+        <div>
+          <form action="?" method="post" enctype="multipart/form-data">
+            图片的src：<input type="file" name="src" /><br>
+            图片的alt：<input type="text" name="alt" /><br>
+            学习时间和难度：<input type="text" name="diff" /><br>
+            学习人数：<input type="text" name="number" /><br>
+            标题：<input type="text" name="title" /><br>
+            难度：<input type="text" name="diff1" /><br>
+            描述：<textarea name="description"></textarea><br>
+            标签1：<input type="text" name="tag1" /><br>
+            标签2：<input type="text" name="tag2" /><br>
+            目标：<input type="text" name="aim" /><br>
+            目标1：<input type="text" name="aim1" /><br>
+            目标2：<input type="text" name="aim2" /><br>
+            目标3：<input type="text" name="aim3" /><br>
+            目标4：<input type="text" name="aim4" /><br>
+            目标5：<input type="text" name="aim5" /><br>
+            目标6：<input type="text" name="aim6" /><br>
+            目标7：<input type="text" name="aim7" /><br>
+            目标8：<input type="text" name="aim8" /><br>
+            任务：<input type="text" name="task" /><br>
+            任务1：<input type="text" name="task1" /><br>
+            思路：<input type="text" name="idel" /><br>
+            思路1：<input type="text" name="idel1" /><br>
+            思路2：<input type="text" name="idel2" /><br>
+            思路3：<input type="text" name="idel3" /><br>
+            思路4：<input type="text" name="idel4" /><br>
+            思路5：<input type="text" name="idel5" /><br>
+            思路6：<input type="text" name="idel6" /><br>
+            思路7：<input type="text" name="idel7" /><br>
+            思路8：<input type="text" name="idel8" /><br>
+            思路9：<input type="text" name="idel9" /><br>
+            参考：<input type="text" name="reference" /><br>
+            参考1：<input type="text" name="reference1" /><br>
+            参考2：<input type="text" name="reference2" /><br>
+            参考3：<input type="text" name="reference3" /><br>
+            <input type="submit" value="添加"/>
+          </form>
+        </div>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>图片的src</th>
+              <th>图片的alt</th>
+              <th>学习时间和难度</th>
+              <th>学习人数</th>
+              <th>标题</th>
+              <th>难度</th>
+              <th>描述</th>
+              <th>链接</th>
+              <th>标签1</th>
+              <th>标签2</th>
+              <th>目标</th>
+              <th>目标1</th>
+              <th>目标2</th>
+              <th>目标3</th>
+              <th>目标4</th>
+              <th>目标5</th>
+              <th>目标6</th>
+              <th>目标7</th>
+              <th>目标8</th>
+              <th>任务</th>
+              <th>任务1</th>
+              <th>思路</th>
+              <th>思路1</th>
+              <th>思路2</th>
+              <th>思路3</th>
+              <th>思路4</th>
+              <th>思路5</th>
+              <th>思路6</th>
+              <th>思路7</th>
+              <th>思路8</th>
+              <th>思路9</th>
+              <th>参考</th>
+              <th>参考1</th>
+              <th>参考2</th>
+              <th>参考3</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0;i<course1.length;i++){ %>
+            <tr>
+              <td><%=course1[i].ID%></td>
+              <td><img width="32" height="32" src="/upload/<%=course1[i].src%>"/></td>
+              <td><%=course1[i].alt %></td>
+              <td><%=course1[i].diff %></td>
+              <td><%=course1[i].number %></td>
+              <td><%=course1[i].title %></td>
+              <td><%=course1[i].diff1 %></td>
+              <td><%=course1[i].description %></td>
+              <td><%=course1[i].tag1 %></td>
+              <td><%=course1[i].tag2 %></td>
+              <td><%=course1[i].aim %></td>
+              <td><%=course1[i].aim1 %></td>
+              <td><%=course1[i].aim2 %></td>
+              <td><%=course1[i].aim3 %></td>
+              <td><%=course1[i].aim4 %></td>
+              <td><%=course1[i].aim5 %></td>
+              <td><%=course1[i].aim6 %></td>
+              <td><%=course1[i].aim7 %></td>
+              <td><%=course1[i].aim8 %></td>
+              <td><%=course1[i].task %></td>
+              <td><%=course1[i].task1 %></td>
+              <td><%=course1[i].idel %></td>
+              <td><%=course1[i].idel1 %></td>
+              <td><%=course1[i].idel2 %></td>
+              <td><%=course1[i].idel3 %></td>
+              <td><%=course1[i].idel4 %></td>
+              <td><%=course1[i].idel5 %></td>
+              <td><%=course1[i].idel6 %></td>
+              <td><%=course1[i].idel7 %></td>
+              <td><%=course1[i].idel8 %></td>
+              <td><%=course1[i].idel9 %></td>
+              <td><%=course1[i].reference %></td>
+              <td><%=course1[i].reference1 %></td>
+              <td><%=course1[i].reference2 %></td>
+              <td><%=course1[i].reference3 %></td>
+              <td>
+                <a href="?act=mod&id=<%=course1[i].ID%>">修改</a>
+                <a href="?act=del&id=<%=course1[i].ID%>" onclick="return confirm('你真的要删吗？')">删除</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <% if(typeof mod_data!='undefined'){ %>
+        <div class="shadow"></div>
+        <div class="mod_dialog">
+          <form action="?" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="mod_id" value="<%= mod_data.ID %>" /><!--用来判断以后是修改还是刷新-->
+            图片的src：<input type="file" name="src"/><br>
+            图片的alt：<input type="text" name="alt" value="<%= mod_data.alt %>"/><br>
+            学习时间和难度：<input type="text" name="diff" value="<%= mod_data.diff %>"/><br>
+            学习人数：<input type="text" name="number" value="<%= mod_data.number %>"/><br>
+            标题：<input type="text" name="title" value="<%= mod_data.title %>"/><br>
+            难度：<input type="text" name="diff1" value="<%= mod_data.diff1 %>"/><br>
+            描述：<textarea name="description"><%= mod_data.description %></textarea><br>
+            标签1：<input type="text" name="tag1" value="<%= mod_data.tag1 %>"/><br>
+            标签2：<input type="text" name="tag2" value="<%= mod_data.tag2 %>"/><br>
+            目标：<input type="text" name="aim" value="<%= mod_data.aim %>"/><br>
+            目标1：<input type="text" name="aim1" value="<%= mod_data.aim1 %>"/><br>
+            目标2：<input type="text" name="aim2" value="<%= mod_data.aim2 %>"/><br>
+            目标3：<input type="text" name="aim3" value="<%= mod_data.aim3 %>"/><br>
+            目标4：<input type="text" name="aim4" value="<%= mod_data.aim4 %>"/><br>
+            目标5：<input type="text" name="aim5" value="<%= mod_data.aim5 %>"/><br>
+            目标6：<input type="text" name="aim6" value="<%= mod_data.aim6 %>"/><br>
+            目标7：<input type="text" name="aim7" value="<%= mod_data.aim7 %>"/><br>
+            目标8：<input type="text" name="aim8" value="<%= mod_data.aim8 %>"/><br>
+            任务：<input type="text" name="task" value="<%= mod_data.task %>"/><br>
+            任务1：<input type="text" name="task1" value="<%= mod_data.task1 %>"/><br>
+            思路：<input type="text" name="idel" value="<%= mod_data.idel %>"/><br>
+            思路1：<input type="text" name="idel1" value="<%= mod_data.idel1 %>"/><br>
+            思路2：<input type="text" name="idel2" value="<%= mod_data.idel2 %>"/><br>
+            思路3：<input type="text" name="idel3" value="<%= mod_data.idel3 %>"/><br>
+            思路4：<input type="text" name="idel4" value="<%= mod_data.idel4 %>"/><br>
+            思路5：<input type="text" name="idel5" value="<%= mod_data.idel5 %>"/><br>
+            思路6：<input type="text" name="idel6" value="<%= mod_data.idel6 %>"/><br>
+            思路7：<input type="text" name="idel7" value="<%= mod_data.idel7 %>"/><br>
+            思路8：<input type="text" name="idel8" value="<%= mod_data.idel8 %>"/><br>
+            思路9：<input type="text" name="idel9" value="<%= mod_data.idel9 %>"/><br>
+            参考：<input type="text" name="reference" value="<%= mod_data.reference %>"/><br>
+            参考1：<input type="text" name="reference" value="<%= mod_data.reference1 %>"/><br>
+            参考2：<input type="text" name="reference" value="<%= mod_data.reference2 %>"/><br>
+            参考3：<input type="text" name="reference" value="<%= mod_data.reference3 %>"/><br>
+            <input type="submit" value="修改"/>
+            <a href="/admin/course1">取消修改</a>
+          </form>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

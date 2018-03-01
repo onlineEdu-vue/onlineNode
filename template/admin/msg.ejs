@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div class="page">
+      <% include components/top.inc.ejs %>
+      <div class="content-wrap">
+        <div>
+          <form action="?" method="post">
+            资讯：<input type="text" name="message" /><br>
+            资讯1：<input type="text" name="message1" /><br>
+            资讯2：<input type="text" name="message2" /><br>
+            资讯3：<input type="text" name="message3" /><br>
+            资讯4：<input type="text" name="message4" /><br>
+            资讯5：<input type="text" name="message5" /><br>
+            资讯6：<input type="text" name="message6" /><br>
+            资讯7：<input type="text" name="message7" /><br>
+            资讯8：<input type="text" name="message8" /><br>
+            资讯9：<input type="text" name="message9" /><br>
+            资讯10：<input type="text" name="message10" /><br>
+            产品：<input type="text" name="product" /><br>
+            产品1：<input type="text" name="product1" /><br>
+            产品2：<input type="text" name="product2" /><br>
+            产品3：<input type="text" name="product3" /><br>
+            产品4：<input type="text" name="product4" /><br>
+            产品5：<input type="text" name="product5" /><br>
+            产品6：<input type="text" name="product6" /><br>
+            产品7：<input type="text" name="product7" /><br>
+            产品8：<input type="text" name="product8" /><br>
+            产品9：<input type="text" name="product9" /><br>
+            产品10：<input type="text" name="product10" /><br>
+            金融：<input type="text" name="finance" /><br>
+            金融1：<input type="text" name="finance1" /><br>
+            金融2：<input type="text" name="finance2" /><br>
+            金融3：<input type="text" name="finance3" /><br>
+            金融4：<input type="text" name="finance4" /><br>
+            金融5：<input type="text" name="finance5" /><br>
+            金融6：<input type="text" name="finance6" /><br>
+            金融7：<input type="text" name="finance7" /><br>
+            金融8：<input type="text" name="finance8" /><br>
+            金融9：<input type="text" name="finance9" /><br>
+            金融10：<input type="text" name="finance10" /><br>
+            <input type="submit" value="添加"/>
+          </form>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>资讯</th>
+              <th>资讯1</th>
+              <th>资讯2</th>
+              <th>资讯3</th>
+              <th>资讯4</th>
+              <th>资讯5</th>
+              <th>资讯6</th>
+              <th>资讯7</th>
+              <th>资讯8</th>
+              <th>资讯9</th>
+              <th>资讯10</th>
+              <th>产品1</th>
+              <th>产品2</th>
+              <th>产品3</th>
+              <th>产品4</th>
+              <th>产品5</th>
+              <th>产品6</th>
+              <th>产品7</th>
+              <th>产品8</th>
+              <th>产品9</th>
+              <th>产品10</th>
+              <th>金融</th>
+              <th>金融1</th>
+              <th>金融2</th>
+              <th>金融3</th>
+              <th>金融4</th>
+              <th>金融5</th>
+              <th>金融6</th>
+              <th>金融7</th>
+              <th>金融8</th>
+              <th>金融9</th>
+              <th>金融10</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0;i<msg.length;i++){ %>
+            <tr>
+              <td><%=msg[i].ID%></td>
+              <td><%=msg[i].meaasge%></td>
+              <td><%=msg[i].meaasge1%></td>
+              <td><%=msg[i].meaasge2%></td>
+              <td><%=msg[i].meaasge3%></td>
+              <td><%=msg[i].meaasge4%></td>
+              <td><%=msg[i].meaasge5%></td>
+              <td><%=msg[i].meaasge6%></td>
+              <td><%=msg[i].meaasge7%></td>
+              <td><%=msg[i].meaasge8%></td>
+              <td><%=msg[i].meaasge9%></td>
+              <td><%=msg[i].meaasge10%></td>
+              <td><%=msg[i].product%></td>
+              <td><%=msg[i].product1%></td>
+              <td><%=msg[i].product2%></td>
+              <td><%=msg[i].product3%></td>
+              <td><%=msg[i].product4%></td>
+              <td><%=msg[i].product5%></td>
+              <td><%=msg[i].product6%></td>
+              <td><%=msg[i].product7%></td>
+              <td><%=msg[i].product8%></td>
+              <td><%=msg[i].product9%></td>
+              <td><%=msg[i].product10%></td>
+              <td><%=msg[i].finance%></td>
+              <td><%=msg[i].finance1%></td>
+              <td><%=msg[i].finance2%></td>
+              <td><%=msg[i].finance3%></td>
+              <td><%=msg[i].finance4%></td>
+              <td><%=msg[i].finance5%></td>
+              <td><%=msg[i].finance6%></td>
+              <td><%=msg[i].finance7%></td>
+              <td><%=msg[i].finance8%></td>
+              <td><%=msg[i].finance9%></td>
+              <td><%=msg[i].finance10%></td>
+              <td>
+                <a href="?act=mod&id=<%=msg[i].ID%>">修改</a>
+                <a href="?act=del&id=<%=msg[i].ID%>" onclick="return confirm('你真的要删吗？')">删除</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <% if(typeof mod_data!='undefined'){ %>
+        <div class="shadow"></div>
+        <div class="mod_dialog">
+          <form action="?" method="post">
+            <input type="hidden" name="mod_id" value="<%= mod_data.ID %>" /><!--用来判断以后是修改还是刷新-->
+            资讯：<input type="text" name="message" value="<%= mod_data.message %>"/><br>
+            资讯1：<input type="text" name="message1" value="<%= mod_data.message1 %>"/><br>
+            资讯2：<input type="text" name="message2" value="<%= mod_data.message2 %>" /><br>
+            资讯3：<input type="text" name="message3" value="<%= mod_data.message3 %>"/><br>
+            资讯4：<input type="text" name="message4" value="<%= mod_data.message4 %>"/><br>
+            资讯5：<input type="text" name="message5" value="<%= mod_data.message5 %>"/><br>
+            资讯6：<input type="text" name="message6" value="<%= mod_data.message6 %>"/><br>
+            资讯7：<input type="text" name="message7" value="<%= mod_data.message7 %>"/><br>
+            资讯8：<input type="text" name="message8" value="<%= mod_data.message8 %>"/><br>
+            资讯9：<input type="text" name="message9" value="<%= mod_data.message9 %>"/><br>
+            资讯10：<input type="text" name="message10" value="<%= mod_data.message10 %>"/><br>
+            产品：<input type="text" name="product" value="<%= mod_data.product %>"/><br>
+            产品1：<input type="text" name="product1" value="<%= mod_data.product1 %>"/><br>
+            产品2：<input type="text" name="product2" value="<%= mod_data.product2 %>"/><br>
+            产品3：<input type="text" name="product3" value="<%= mod_data.product3 %>"/><br>
+            产品4：<input type="text" name="product4" value="<%= mod_data.product4 %>"/><br>
+            产品5：<input type="text" name="product5" value="<%= mod_data.product5 %>"/><br>
+            产品6：<input type="text" name="product6" value="<%= mod_data.product6 %>"/><br>
+            产品7：<input type="text" name="product7" value="<%= mod_data.product7 %>"/><br>
+            产品8：<input type="text" name="product8" value="<%= mod_data.product8 %>"/><br>
+            产品9：<input type="text" name="product9" value="<%= mod_data.product9 %>"/><br>
+            产品10：<input type="text" name="product10" value="<%= mod_data.product10 %>"/><br>
+            金融：<input type="text" name="finance" value="<%= mod_data.finance %>"/><br>
+            金融1：<input type="text" name="finance1" value="<%= mod_data.finance1 %>"/><br>
+            金融2：<input type="text" name="finance2" value="<%= mod_data.finance2 %>"/><br>
+            金融3：<input type="text" name="finance3" value="<%= mod_data.finance3 %>"/><br>
+            金融4：<input type="text" name="finance4" value="<%= mod_data.finance4 %>"/><br>
+            金融5：<input type="text" name="finance5" value="<%= mod_data.finance5 %>"/><br>
+            金融6：<input type="text" name="finance6" value="<%= mod_data.finance6 %>"/><br>
+            金融7：<input type="text" name="finance7" value="<%= mod_data.finance7 %>"/><br>
+            金融8：<input type="text" name="finance8" value="<%= mod_data.finance8 %>"/><br>
+            金融9：<input type="text" name="finance9" value="<%= mod_data.finance9 %>"/><br>
+            金融10：<input type="text" name="finance10" value="<%= mod_data.finance10 %>"/><br>
+            链接：<input type="text" name="href" value="<%= mod_data.href %>"/><br>
+            <input type="submit" value="修改"/>
+            <a href="/admin/message">取消修改</a>
+          </form>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
