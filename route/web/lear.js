@@ -24,16 +24,23 @@ module.exports=function (req, res){
           if(data.length==0){
             res.status(400).send('no this admin').end();
           }else{
-           //进行积分的扣除
-            db.query(usernameSQL.updata,[username],(err,data)=>{
-              if(err){
-                console.error(err);
-                res.status(500).send('database error').end();
-              }else{
-                //console.log(data);
-                res.send(data).end();
-              }
-            })
+            console.log(data[0].graduate)
+            let result = data[0].graduate - 0;
+            if(result > 100) {
+              //进行积分的扣除
+              db.query(usernameSQL.updata,[username],(err,distable)=>{
+                if(err){
+                  console.error(err);
+                  res.status(500).send('database error').end();
+                }else{
+                  //console.log(data);
+                  res.send({code:0,message: `你现在有${result}积分，学习将要扣除100积分`,residue: result - 100}).end();
+                }
+              })
+            } else {
+              res.send({code:400,message: '积分不足'}).end();
+            }
+           
           }
         }
       });

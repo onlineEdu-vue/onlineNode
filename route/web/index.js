@@ -24,7 +24,7 @@ module.exports=function (){
       body = JSON.parse(Buffer.concat(body).toString());
       req.body = body;
       //console.log(req.body);
-    db.query(`SELECT * FROM course_table where ID >  ${req.body.offset} * ${req.body.limit} and ID < ${req.body.offset} * ${req.body.limit} + ${req.body.limit}`, (err, data)=>{
+    db.query(`SELECT * FROM course_table where ID >  ${req.body.offset - 1} * ${req.body.limit} and ID < ${req.body.offset - 1} * ${req.body.limit} + ${req.body.limit}`, (err, data)=>{
       if(err){
         console.error(err);
         res.status(500).send('database error').end();
