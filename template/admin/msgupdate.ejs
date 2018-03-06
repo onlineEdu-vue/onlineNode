@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <% if(typeof mod_data!='undefined'){ %>
+    <div class="mod_dialog">
+      <form action="?" method="post">
+        <input type="hidden" name="mod_id" value="<%= mod_data.ID %>" /><!--用来判断以后是修改还是刷新-->
+        资讯：<input type="text" name="message" value="<%= mod_data.message %>"/><br>
+        资讯1：<input type="text" name="message1" value="<%= mod_data.message1 %>"/><br>
+        资讯2：<input type="text" name="message2" value="<%= mod_data.message2 %>" /><br>
+        资讯3：<input type="text" name="message3" value="<%= mod_data.message3 %>"/><br>
+        资讯4：<input type="text" name="message4" value="<%= mod_data.message4 %>"/><br>
+        资讯5：<input type="text" name="message5" value="<%= mod_data.message5 %>"/><br>
+        资讯6：<input type="text" name="message6" value="<%= mod_data.message6 %>"/><br>
+        资讯7：<input type="text" name="message7" value="<%= mod_data.message7 %>"/><br>
+        资讯8：<input type="text" name="message8" value="<%= mod_data.message8 %>"/><br>
+        资讯9：<input type="text" name="message9" value="<%= mod_data.message9 %>"/><br>
+        资讯10：<input type="text" name="message10" value="<%= mod_data.message10 %>"/><br>
+        产品：<input type="text" name="product" value="<%= mod_data.product %>"/><br>
+        产品1：<input type="text" name="product1" value="<%= mod_data.product1 %>"/><br>
+        产品2：<input type="text" name="product2" value="<%= mod_data.product2 %>"/><br>
+        产品3：<input type="text" name="product3" value="<%= mod_data.product3 %>"/><br>
+        产品4：<input type="text" name="product4" value="<%= mod_data.product4 %>"/><br>
+        产品5：<input type="text" name="product5" value="<%= mod_data.product5 %>"/><br>
+        产品6：<input type="text" name="product6" value="<%= mod_data.product6 %>"/><br>
+        产品7：<input type="text" name="product7" value="<%= mod_data.product7 %>"/><br>
+        产品8：<input type="text" name="product8" value="<%= mod_data.product8 %>"/><br>
+        产品9：<input type="text" name="product9" value="<%= mod_data.product9 %>"/><br>
+        产品10：<input type="text" name="product10" value="<%= mod_data.product10 %>"/><br>
+        金融：<input type="text" name="finance" value="<%= mod_data.finance %>"/><br>
+        金融1：<input type="text" name="finance1" value="<%= mod_data.finance1 %>"/><br>
+        金融2：<input type="text" name="finance2" value="<%= mod_data.finance2 %>"/><br>
+        金融3：<input type="text" name="finance3" value="<%= mod_data.finance3 %>"/><br>
+        金融4：<input type="text" name="finance4" value="<%= mod_data.finance4 %>"/><br>
+        金融5：<input type="text" name="finance5" value="<%= mod_data.finance5 %>"/><br>
+        金融6：<input type="text" name="finance6" value="<%= mod_data.finance6 %>"/><br>
+        金融7：<input type="text" name="finance7" value="<%= mod_data.finance7 %>"/><br>
+        金融8：<input type="text" name="finance8" value="<%= mod_data.finance8 %>"/><br>
+        金融9：<input type="text" name="finance9" value="<%= mod_data.finance9 %>"/><br>
+        金融10：<input type="text" name="finance10" value="<%= mod_data.finance10 %>"/><br>
+        链接：<input type="text" name="href" value="<%= mod_data.href %>"/><br>
+        <input type="submit" value="修改"/>
+        <a href="/admin/message">取消修改</a>
+      </form>
+    </div>
+    <% } %>
+  </body>
+</html>

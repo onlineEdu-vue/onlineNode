@@ -54,7 +54,7 @@ module.exports=function (){
                 console.error(err);
                 req.status(500).send('database error').end();
               }else{
-                res.render('admin/coursecontent.ejs', {course1, mod_data: data[0]});
+                res.render('admin/coursecontentupdate.ejs', {course1, mod_data: data[0]});
               }
             });
           }

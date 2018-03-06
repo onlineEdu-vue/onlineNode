@@ -21,7 +21,7 @@ module.exports=function (){
                 console.error(err);
                 res.status(500).send('database error').end();
               }else{
-                res.render('admin/msg.ejs', {msg, mod_data: data[0]});
+                res.render('admin/msgupdate.ejs', {msg, mod_data: data[0]});
               }
             });
           }

@@ -12,21 +12,28 @@ module.exports=function (){
         console.error(err);
         res.status(500).send('database error').end();
       }else{
-        console.log(data);
+        // console.log(data);
         res.send(data).end();
       }
     });
   });
-  router.get('/course', (req, res)=>{
-    db.query('SELECT * FROM course_table', (err, data)=>{
+  router.post('/course', (req, res)=>{
+    let body = [];
+    req.on('data',chunk => body.push(chunk));
+    req.on('end',() => {
+      body = JSON.parse(Buffer.concat(body).toString());
+      req.body = body;
+      //console.log(req.body);
+    db.query(`SELECT * FROM course_table where ID >  ${req.body.offset} * ${req.body.limit} and ID < ${req.body.offset} * ${req.body.limit} + ${req.body.limit}`, (err, data)=>{
       if(err){
         console.error(err);
         res.status(500).send('database error').end();
       }else{
-        console.log(data);
+       //console.log(data);
         res.send(data).end();
       }
     });
+  });
   });
   router.get('/coursecontent', (req, res)=>{
     db.query('SELECT * FROM coursecontent_table', (err, data)=>{
@@ -34,7 +41,7 @@ module.exports=function (){
         console.error(err);
         res.status(500).send('database error').end();
       }else{
-        console.log(data);
+        // console.log(data);
         res.send(data[0]).end();
       }
     });
@@ -45,7 +52,7 @@ module.exports=function (){
         console.error(err);
         res.status(500).send('database error').end();
       }else{
-        console.log(data);
+        // console.log(data);
         res.send(data[0]).end();
       }
     });
@@ -55,7 +62,3 @@ module.exports=function (){
   router.use('/lear',require('./lear')());
   return router;
 };
-
-
-// 1.判断当前是那个用户登录
-// 2.删除该用户的数据

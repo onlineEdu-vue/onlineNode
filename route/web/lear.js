@@ -14,9 +14,8 @@ module.exports=function (req, res){
       req.body = body;
 
       let username = req.body.username;
-      // 刚刚是哪里的问题？？
-      console.log(1212);
-      console.log(usernameSQL.select,['123']);
+      //console.log(1212);
+      //console.log(usernameSQL.select,['123']);
       db.query(usernameSQL.select + username, (err, data)=>{
         if(err){
           console.error(err);
@@ -31,6 +30,7 @@ module.exports=function (req, res){
                 console.error(err);
                 res.status(500).send('database error').end();
               }else{
+                //console.log(data);
                 res.send(data).end();
               }
             })

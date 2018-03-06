@@ -53,7 +53,7 @@ module.exports=function (){
                 console.error(err);
                 req.status(500).send('database error').end();
               }else{
-                res.render('admin/index.ejs', {home, mod_data: data[0]});
+                res.render('admin/indexupdate.ejs', {home, mod_data: data[0]});
               }
             });
           }
